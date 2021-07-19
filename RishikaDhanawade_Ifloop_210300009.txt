@@ -1,0 +1,144 @@
+#########################
+Author: Rishika Dhanawade
+Date of creation:5 May 2021
+Topic:If else
+Language Used:C
+#########################
+
+/*
+1) Write a C program to find the eligibility of admission for a professional course based on the following
+criteria:
+Eligibility Criteria :
+Marks in Maths >=65
+Marks in Phy >=55
+Marks in Chem>=50
+Total in all three subject >=190
+Total in Maths and Physics >=140
+*/
+
+#include<stdio.h>
+int main()
+{
+int phy,chem,maths,phy_maths,total; //variables to store marks obtanied in these subjects
+printf("Enter the marks obtained in Physics,Chemistry and Maths respectively");
+scanf("%d %d %d",&phy,&chem,&maths); //Assume each subject to have maximum of 80marks
+if(phy<=80||chem<=80||maths<=80)
+{
+    phy_maths=phy+maths;
+    printf("Marks Obtained in Physics and Maths: %d",phy_maths);
+    total=phy_maths+chem;
+    printf("Total marks: %d",total);
+    if(phy>=55&&maths>=65&&chem>50&&phy_maths>=140&&total>=190)
+    {
+        printf("Eligible");
+    }
+    else
+    printf("Not eligiible");
+}
+return 0;
+}
+
+#########################
+Author: Rishika Dhanawade
+Date of creation:5 May 2021
+Topic:If else
+Language Used:C
+#########################
+
+/*
+2) Write a C program to find whether a given year is a leap year or not.
+*/
+#include<stdio.h>
+int main()
+{
+    int y;
+    printf("Enter year");
+    scanf("%d",&y);
+    if((y%4==0&&y%100!=0)||y%400==0)
+    {
+        printf("%d is a Leap year",y);
+    }
+    else
+    printf("%d is Not a leap year",y);
+    return 0;
+}
+
+#########################
+Author: Rishika Dhanawade
+Date of creation:5 May 2021
+Topic:If else
+Language Used:C
+#########################
+
+/*
+3) Accept the purchases made by a customer and calculate and print the discount payable by him. You are
+given that a discount of 10% is given on purchases greater than Rs. 3000/- and no discount is given for
+purchases below that.
+*/
+
+#include<stdio.h>
+int main()
+{
+    int purchase_amt;
+    float discount;
+    printf("Enter purchase amount");
+    scanf("%d",&purchase_amt);
+    if(purchase_amt>3000)
+    {
+        discount=0.1*purchase_amt;
+        printf("Discount payable amount =%f",(float)purchase_amt-discount);
+    }
+    else
+    printf("No discount");
+    return 0;
+}
+
+#########################
+Author: Rishika Dhanawade
+Date of creation:5 May 2021
+Topic:If else
+Language Used:C
+#########################
+
+/*
+4) To accept a number and check for the number being positive, negative or zero and print an appropriate
+message.
+*/
+
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter number");
+    scanf("%d",&number);
+    if(number>0)
+    printf("Positive Number");
+    else if(number<0)
+    printf("Negative Number");
+    else
+    printf("Zero");
+return 0;
+}
+
+#########################
+Author: Rishika Dhanawade
+Date of creation:5 May 2021
+Topic:If else
+Language Used:C
+#########################
+
+/*
+5) Write a program in C to display the first 10 natural numbers(using For loop)
+*/
+
+#include <stdio.h>
+int main()
+{     
+    int i;
+	printf("The first 10 natural numbers are:\n");
+	for (i=1;i<=10;i++)
+	{      
+		printf("%d ",i);
+	}
+    return 0;
+}

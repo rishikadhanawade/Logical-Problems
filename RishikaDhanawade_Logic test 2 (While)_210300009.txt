@@ -1,0 +1,177 @@
+#########################
+Author: Rishika Dhanawade
+Date of creation: 3rd May 2021
+Topic: Logic test 2 (While)
+Language Used: C
+#########################
+
+#######################################################################################################################
+1. Given that the rate of pens is Rs. 20/- each and pencil is Rs. 5/- each. Accept from the user the quantity purchased 
+of each of them and calculate and print the amount to be paid to the shopkeeper.
+#######################################################################################################################
+
+#include<stdio.h>
+int main()
+{
+    int pen_price;  
+    int pencil_price; 
+    int pen_quantity,pencil_quantity;
+    printf("Enter pen and pencil quantity purchased");
+    scanf("%d %d",&pen_quantity,&pencil_quantity);
+    while(pencil_quantity>0)
+    {
+        pencil_price+=5;
+        pencil_quantity--;
+    }
+    while(pen_quantity>0)
+    {
+        pen_price+=20;
+        pen_quantity--;
+    }
+    int amount_paid;
+    amount_paid=pencil_price+pen_price;
+    printf("Amount to be paid to the shopkeeper: %d",amount_paid);
+    return 0;
+}
+
+#######################################################################################################################
+2. To calculate and print the commission earned by a salesman based on criteria given
+If sales <= Rs. 5000    commission rate =10% of sales
+Otherwise               commission rate = 20% of sales
+#######################################################################################################################
+
+#include<stdio.h>
+int main()
+{
+    float sales;
+    float comm_rate;
+    printf("Enter the amount of sales generated");
+    scanf("%f",&sales);
+    if(sales<=5000)
+    {
+        comm_rate=0.1*sales;
+        printf("Commision earned: %f",comm_rate);
+    }
+    else
+    {
+        comm_rate=0.2*sales;
+        printf("Commision earned: %f",comm_rate);
+    }
+    return 0;
+
+}
+
+####################################################################################
+3. Write an infinite loop. An infinite loop never ends. Condition is always true.
+####################################################################################
+
+#include<stdio.h>
+int main()
+{
+    int i=1; 
+    while(i)  //since i=1 condition is always true
+    {
+        printf("%d",i);
+    }
+}
+
+#############################################################################################################
+4. Take integer inputs from user until he/she presses q ( Ask to press q to quit, after every integer input ).
+Print average and product of all numbers.
+#############################################################################################################
+
+#include<stdio.h>
+int main()
+{
+    char c=1;
+    int n,count=0; 
+    int sum=0,prod=1;
+    float avg;
+    {
+         while(c!='q')
+         {  
+             printf("Enter a number");
+             scanf("%d",&n);
+             getchar();
+             sum=sum+n;
+             prod=prod*n;
+             printf("Enter q to quit else just press any key");
+             scanf("%c",&c);
+             count++;
+         }
+         avg=(1.0*sum)/(count);
+         printf("Average is: %fand Product is: %d",avg,prod);
+    }
+}
+
+###############################################################
+5. Print multiplication table of 8, 17 and 27 using while loop.
+###############################################################
+
+#include<stdio.h>
+int main()
+{
+    int k=1,n[3]={8,17,27},i=0;
+    while(i<3)
+    {
+        while(k<13)
+        {
+            printf("%d * %d = %d\n",n[i],k,n[i]*k);
+            k++;
+        }
+        k=1; //Resetting k;
+        i++;
+    }
+    return 0;
+}
+
+############################################################################
+6. Write a program to print a number given by user but digits reversed. E.g.-
+INPUT : 123 OUTPUT : 321
+INPUT : 12345 OUTPUT : 54321
+#############################################################################
+
+#include<stdio.h>
+int main()
+{
+    int num;
+    int rev=0,d=0;
+    printf("Enter a number: ");
+    scanf("%d",&num);
+    while(num>0)
+    {
+        d=num%10;
+        rev=rev*10+d;
+        num=num/10;
+    }
+    printf("Reversed number is :%d",rev);
+    return 0;
+}
+
+#################################################################
+7. Write a program to print all prime number in between 55 to 249.
+#################################################################
+
+#include<stdio.h>
+int main()
+{
+    int low=55,high=249,i;
+    int count=0;
+    int number;
+    printf("Prime Nos between %d and %d are: ",low,high);
+    for(number=low;number<=high;number++)
+    {
+        for(i=2;i<number/2;i++)
+        {
+            if(number%i==0)
+            {
+                count++;
+                break;
+            }
+        }
+        if(count==0)
+        printf("%d ",number);
+        count=0;
+    }
+    return 0;
+}

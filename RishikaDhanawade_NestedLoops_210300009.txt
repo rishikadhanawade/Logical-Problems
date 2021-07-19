@@ -1,0 +1,172 @@
+#########################
+Author:Rishika Dhanawade
+Date of creation: 5th May 2021
+Topic: Nested Loops
+Language Used: C
+######################### 
+
+/* 1) Write a C program to calculate the factorial of a given number */
+
+#include<stdio.h>
+int main()
+{
+    int number,fact=1;
+    printf("Enter a number");
+    scanf("%d",&number);
+    for(int i=1;i<=number;i++)  //loop to calculate factorial
+    {
+        fact=fact*i;
+    }
+    printf("Factorial is: %d",fact);
+    return 0;
+}
+
+#########################
+Author:Rishika Dhanawade
+Date of creation: 5th May 2021
+Topic: Nested Loops
+Language Used: C
+######################### 
+
+/* 2) Write a program in C to find the sum of the series: 2,4,8,16,...2n */
+
+#include<stdio.h>
+int main()
+{
+    int i,n,number=1,j,sum=0;
+    printf("Enter number of terms");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        number=number*2;
+        sum=sum+number;
+    }
+    printf("Sum is: %d",sum);
+}
+
+#########################
+Author:Rishika Dhanawade
+Date of creation: 5th May 2021
+Topic: Nested Loops
+Language Used: C
+######################### 
+
+/* 3) Write a program in C to find the sum of the series 1 +11 + 111 + 1111 + .. n terms. */ 
+
+#include<stdio.h>
+int main()
+{
+    int i,n,count=0,sum=0;
+    printf("Enter number of terms");
+    scanf("%d",&n);
+    for(i=1;count<n;i=i*10+1)
+    {   if(count==n-1)
+        {
+            printf("%d ",i);
+        }
+        else
+        printf("%d + ",i);
+        sum=sum+i;
+        count++;
+    }
+    printf("\nThe Sum is: %d",sum);
+    return 0;
+    }
+
+#########################
+Author:Rishika Dhanawade
+Date of creation: 5th May 2021
+Topic: Nested Loops
+Language Used: C
+######################### 
+
+4)
+/*  1
+   12
+   123
+   1234 */
+
+#include<stdio.h>
+int main()
+{
+    int i,j,n=4,p;
+    for(i=1;i<=n;i++)   //loop for rows
+    {   p=1;
+        for(j=1;j<=i;j++)  //loop for columns
+        {
+            printf("%d",p++);
+        }
+        printf("\n");  //for new line
+    }
+}
+
+#########################
+Author:Rishika Dhanawade
+Date of creation: 5th May 2021
+Topic: Nested Loops
+Language Used: C
+#########################  
+
+4)
+/* 
+1
+01
+101
+0101
+10101
+*/ 
+
+#include <stdio.h>
+int main()
+{
+   int i,j,n=5,p,q;
+   for(i=1;i<=n;i++)
+   {
+     if(i%2==0)
+     { 
+         p=1;
+         q=0;
+     }
+     else
+     { 
+         p=0;
+         q=1;
+     }
+    for(j=1;j<=i;j++)
+	 if(j%2==0)
+	    printf("%d",p);
+	 else
+	    printf("%d",q);
+     printf("\n");
+   }
+} 
+
+#########################
+Author:Rishika Dhanawade
+Date of creation: 5th May 2021
+Topic: Nested Loops
+Language Used: C
+#########################
+
+/*
+S
+SM
+SMV
+SMVI
+SMVIT
+SMVITA
+*/
+
+#include<stdio.h>
+int main()
+{   char vita[100]="SMVITA";
+    int i,j,n=6;
+    for(i=1;i<=n;i++)   //loop for rows
+    {   
+        for(j=1;j<=i;j++)  //loop for columns
+        {
+            printf("%c",vita[j-1]);
+        }
+        printf("\n");  //for new line
+    }
+}

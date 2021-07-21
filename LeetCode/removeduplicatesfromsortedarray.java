@@ -1,4 +1,4 @@
-class Solution {
+class removeduplicatesfromsortedarray {
     public int removeDuplicates(int[] nums) {
         
         int res=1;
